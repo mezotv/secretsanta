@@ -60,7 +60,7 @@ export default function GiftRequests() {
                                                     colSpan="4"
                                                     className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 text-center"
                                                 >
-                                                    No gifts found. Please add a gift.
+                                                    Your recipient has not added any gifts. Please check back later.
                                                 </td>
                                             </tr>
                                         )}
