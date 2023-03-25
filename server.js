@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+const path = require("path")
 const express = require('express')
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', true);
@@ -22,9 +23,14 @@ app.use('/api/gifts', giftRoutes)
 app.use('/api/groups', groupRoutes)
 app.use('/api/users', userRoutes)
 
+app.use(express.static(path.join(__dirname, "frontend", "build")))
+
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
+        app.get("*", (req, res) => {
+            res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+        });
         //listen for requests
         app.listen(process.env.PORT, () => {
             console.log('Connected to db and listening on port', process.env.PORT)

@@ -1,5 +1,4 @@
 {
-  "proxy": "http://localhost:4000",
   "name": "secret_santa_newer",
   "version": "0.1.0",
   "private": true,
@@ -26,6 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:4000",
   "eslintConfig": {
     "extends": [
       "react-app",
